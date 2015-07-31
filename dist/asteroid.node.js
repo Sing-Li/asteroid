@@ -2,7 +2,7 @@
 
 var DDP = require("ddp.js");
 var Q = require("q");
-var WebSocket = require("faye-websocket");
+
 
 //////////////////////////
 // Asteroid constructor //
@@ -1165,7 +1165,7 @@ Asteroid.utils.multiStorage.del = function (key) {
 Asteroid.prototype._setDdpOptions = function (host, ssl, socketInterceptFunction) {
 	this._ddpOptions = {
 		endpoint: (ssl ? "wss://" : "ws://") + host + "/websocket",
-		SocketConstructor: WebSocket.Client,
+		SocketConstructor: WebSocket,
 		socketInterceptFunction: socketInterceptFunction
 	};
 };
